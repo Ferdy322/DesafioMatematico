@@ -1,0 +1,255 @@
+/* Variables de Diseño */
+:root {
+    --color-fondo: #f8fafc;
+    --color-tarjeta: #ffffff;
+    --color-primario: #1e293b;
+    --color-secundario: #0284c7;
+    --color-exito: #16a34a;
+    --color-peligro: #dc2626;
+    --color-texto: #334155;
+    --color-borde: #cbd5e1;
+    --fuente-principal: 'Segoe UI', system-ui, sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--color-fondo);
+    color: var(--color-texto);
+    font-family: var(--fuente-principal);
+    line-height: 1.6;
+    padding-bottom: 40px;
+}
+
+header {
+    background-color: var(--color-primario);
+    color: #ffffff;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+}
+
+.autor {
+    font-weight: 300;
+    opacity: 0.8;
+}
+
+.contenedor {
+    max-width: 850px;
+    margin: 30px auto;
+    padding: 0 16px;
+}
+
+.tarjeta {
+    background-color: var(--color-tarjeta);
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    margin-bottom: 24px;
+    padding: 24px;
+}
+
+.tarjeta h2 {
+    color: var(--color-primario);
+    margin-bottom: 14px;
+    font-size: 1.4rem;
+}
+
+/* Controladores de Pestañas (Tabs) */
+.contenedor-pestanas {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 16px;
+}
+
+.btn-pestana {
+    flex: 1;
+    background-color: #e2e8f0;
+    color: var(--color-primario);
+    border: none;
+    padding: 12px 8px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    font-size: 0.9rem;
+}
+
+.btn-pestana.activa, .btn-pestana:hover {
+    background-color: var(--color-secundario);
+    color: #ffffff;
+}
+
+/* Visibilidad de los Módulos de Aplicación */
+.modulo-app {
+    display: none;
+}
+
+.modulo-app.activo {
+    display: block;
+}
+
+.descripcion-contexto, .explicacion-algoritmo {
+    background-color: #f1f5f9;
+    padding: 12px;
+    border-left: 4px solid var(--color-secundario);
+    border-radius: 4px;
+    margin-bottom: 14px;
+    font-size: 0.95rem;
+}
+
+.explicacion-algoritmo {
+    border-left-color: #64748b;
+    margin-bottom: 20px;
+}
+
+/* Elementos de Formulario */
+.grupo-control {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 16px;
+}
+
+.grupo-control label {
+    font-weight: 600;
+    margin-bottom: 6px;
+}
+
+.grupo-control input {
+    padding: 12px;
+    border: 1px solid var(--color-borde);
+    border-radius: 6px;
+    font-size: 1rem;
+}
+
+button[type="button"] {
+    background-color: var(--color-secundario);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    padding: 14px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    width: 100%;
+}
+
+button[type="button"]:hover {
+    filter: brightness(1.1);
+}
+
+/* Contenedores Dinámicos de Resultados */
+.resultado-contenedor {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.placeholder-texto {
+    color: #94a3b8;
+    font-style: italic;
+    text-align: center;
+}
+
+.error-texto {
+    color: var(--color-peligro);
+    font-weight: bold;
+}
+
+/* Componentes de la Tabla de Ahorro */
+.tabla-resultados {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+.tabla-resultados th, .tabla-resultados td {
+    border: 1px solid var(--color-borde);
+    padding: 12px;
+    text-align: left;
+}
+
+.tabla-resultados th {
+    background-color: #f1f5f9;
+    color: var(--color-primario);
+}
+
+/* Alertas de Validación de Clave */
+.alerta-resultado {
+    width: 100%;
+    padding: 16px;
+    border-radius: 8px;
+    border: 1px solid transparent;
+}
+
+.alerta-resultado.exito {
+    background-color: #f0fdf4;
+    border-color: #bbf7d0;
+    color: #166534;
+}
+
+.alerta-resultado.peligro {
+    background-color: #fef2f2;
+    border-color: #fca5a5;
+    color: #991b1b;
+}
+
+/* Cuadrículas de la Serie Combinada */
+.item-numero {
+    background-color: #ffffff;
+    border: 2px solid var(--color-borde);
+    border-radius: 8px;
+    padding: 14px;
+    min-width: 75px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+.item-numero.es-primo {
+    background-color: #f0fdf4;
+    border-color: var(--color-exito);
+    color: var(--color-exito);
+}
+
+.item-numero.es-primo::after {
+    content: "Primo";
+    display: block;
+    font-size: 0.65rem;
+    text-transform: uppercase;
+}
+
+footer {
+    background-color: var(--color-primario);
+    color: white;
+    text-align: center;
+    padding: 30px 16px;
+    font-size: 0.9rem;
+}
+
+.enlaces-proyecto {
+    margin-top: 10px;
+}
+
+.enlaces-proyecto a {
+    color: #38bdf8;
+    text-decoration: none;
+    margin: 0 10px;
+    font-weight: bold;
+}
+
+/* Consultas de Medios (Diseño Responsivo) */
+@media (min-width: 600px) {
+    header h1 { font-size: 2.2rem; }
+    .btn-pestana { font-size: 1rem; padding: 12px; }
+}

@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matemáticas que resuelven problemas: Fibonacci y Números Primos en la vida real</title>
+    <link rel="stylesheet" href="estilos/style.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>Matemáticas que resuelven problemas: Fibonacci y Números Primos en la vida real</h1>
+        <p class="autor">Desarrollado por: Ferdy Encinas Amoraga</p>
+    </header>
+
+    <main class="contenedor">
+
+        <section class="tarjeta">
+            <h2>Contexto del Proyecto</h2>
+            <p>
+                En el mundo real, los patrones matemáticos abstractos resuelven desafíos críticos del día a día[. Desde
+                la optimización de las finanzas personales mediante modelos de crecimiento orgánico, hasta la protección
+                de datos bancarios y la validación de códigos de acceso en ciberseguridad, las propiedades de la serie
+                de Fibonacci y los números primos son pilares de la ingeniería moderna.
+            </p>
+        </section>
+
+        <div class="contenedor-pestanas">
+            <button class="btn-pestana activa" id="tabAhorro" onclick="cambiarPestana('ahorro')">💰 Plan de
+                Ahorro</button>
+            <button class="btn-pestana" id="tabSeguridad" onclick="cambiarPestana('seguridad')">🔒 Validar
+                Clave</button>
+            <button class="btn-pestana" id="tabMezcla" onclick="cambiarPestana('mezcla')">⚙️ Claves Avanzadas</button>
+        </div>
+
+        <section id="moduloAhorro" class="tarjeta modulo-app activo">
+            <h2>Aplicación 1: Ahorro Progresivo con Fibonacci</h2>
+            <p class="descripcion-contexto">
+                <strong>Problema Real:</strong> Una persona desea ahorrar dinero durante varios meses. En lugar de
+                guardar una cantidad fija, utiliza la velocidad de crecimiento de la serie de Fibonacci para aumentar su
+                depósito paulatinamente, optimizando su capacidad de acumulación de capital.
+            </p>
+            <div class="explicacion-algoritmo">
+                <strong>Algoritmo:</strong> Calcula mes a mes la serie sumando los dos depósitos anteriores ($0, 1, 1,
+                2, 3, 5...$) y acumula el total general sin usar vectores.
+            </div>
+
+            <form id="formAhorro" onsubmit="event.preventDefault();">
+                <div class="grupo-control">
+                    <label for="mesesAhorro">Cantidad de meses a proyectar:</label>
+                    <input type="number" id="mesesAhorro" min="1" max="30" placeholder="Ej. 12" required>
+                </div>
+                <button type="button" id="btnCalcularAhorro">Calcular Plan de Ahorro</button>
+            </form>
+        </section>
+
+        <section id="moduloSeguridad" class="tarjeta modulo-app">
+            <h2>Aplicación 2: Códigos de Acceso Seguros</h2>
+            <p class="descripcion-contexto">
+                <strong>Problema Real:</strong> Validación de credenciales. Los sistemas informáticos validan si un
+                código numérico o token de acceso es un número primo para considerarlo resistente a ataques de
+                factorización por fuerza bruta.
+            </p>
+            <div class="explicacion-algoritmo">
+                <strong>Algoritmo:</strong> Evalúa mediante un bucle de control si el número ingresado posee exactamente
+                dos divisores (el 1 y él mismo).
+            </div>
+
+            <form id="formSeguridad" onsubmit="event.preventDefault();">
+                <div class="grupo-control">
+                    <label for="codigoVerificar">Ingresa el código numérico a evaluar:</label>
+                    <input type="number" id="codigoVerificar" min="1" placeholder="Ej. 97" required>
+                </div>
+                <button type="button" id="btnVerificarSeguridad">Validar Código de Seguridad</button>
+            </form>
+        </section>
+
+        <section id="moduloMezcla" class="tarjeta modulo-app">
+            <h2>Aplicación 3: Generación de Claves Criptográficas Mixtas</h2>
+            <p class="descripcion-contexto">
+                <strong>Problema Real:</strong> Los sistemas de encriptación avanzados necesitan identificar números
+                especiales dentro de secuencias de crecimiento exponencial para romper la predictibilidad uniforme y
+                generar llaves más robustas.
+            </p>
+            <div class="explicacion-algoritmo">
+                <strong>Algoritmo:</strong> Despliega la cantidad solicitada de términos de Fibonacci y aplica
+                simultáneamente el filtro de primalidad para aislar los números que cumplen ambas condiciones.
+            </div>
+
+            <form id="formMezcla" onsubmit="event.preventDefault();">
+                <div class="grupo-control">
+                    <label for="cantidadMezcla">Cantidad de términos de la serie a analizar:</label>
+                    <input type="number" id="cantidadMezcla" min="1" max="40" placeholder="Ej. 15" required>
+                </div>
+                <button type="button" id="btnCalcularMezcla">Generar y Filtrar Secuencia</button>
+            </form>
+        </section>
+
+        <section class="tarjeta resultado-seccion">
+            <h2>Resultados del Análisis</h2>
+            <div id="resultadoBox" class="resultado-contenedor">
+                <p class="placeholder-texto">Selecciona una aplicación, ingresa los datos y presiona el botón para
+                    ejecutar los algoritmos.</p>
+            </div>
+        </section>
+
+        <section class="tarjeta conclusion">
+            <h2>Conclusión Científica</h2>
+            <p>
+                El uso de formularios interactivos demuestra de forma tangible cómo la programación y las matemáticas
+                aplicadas se unen para resolver ineficiencias del mundo real. Ya sea automatizando el
+                crecimiento financiero o robusteciendo la arquitectura de software, el control lógico del DOM nos
+                permite visualizar soluciones complejas instantáneamente en la web.
+            </p>
+        </section>
+    </main>
+
+    <footer>
+        <p>Desafio Matematico</p>
+        <div class="enlaces-proyecto">
+            <a href="https://github.com/TU-USUARIO/TU-REPOSITORIO" id="linkGit" target="_blank">Enlace del repositorio
+                Git</a>
+            <a href="https://TU-USUARIO.github.io/TU-REPOSITORIO/" id="linkWeb" target="_blank">Enlace de la página
+                publicada</a>
+        </div>
+    </footer>
+
+    <script>
+        function cambiarPestana(modulo) {
+            const modulos = document.getElementsByClassName('modulo-app');
+            for (let m of modulos) { m.classList.remove('activo'); }
+            const botones = document.getElementsByClassName('btn-pestana');
+            for (let b of botones) { b.classList.remove('activa'); }
+            document.getElementById("resultadoBox").innerHTML = '<p class="placeholder-texto">Ingresa los datos del nuevo módulo y presiona el botón para calcular.</p>';
+            if (modulo === 'ahorro') {
+                document.getElementById('moduloAhorro').classList.add('activo');
+                document.getElementById('tabAhorro').classList.add('activa');
+            } else if (modulo === 'seguridad') {
+                document.getElementById('moduloSeguridad').classList.add('activo');
+                document.getElementById('tabSeguridad').classList.add('activa');
+            } else if (modulo === 'mezcla') {
+                document.getElementById('moduloMezcla').classList.add('activo');
+                document.getElementById('tabMezcla').classList.add('activa');
+            }
+        }
+        document.addEventListener("DOMContentLoaded", () => {
+            document.getElementById("btnCalcularAhorro").addEventListener("click", () => {
+                const meses = parseInt(document.getElementById("mesesAhorro").value);
+                const contenedor = document.getElementById("resultadoBox");
+
+                if (isNaN(meses) || meses < 1) {
+                    contenedor.innerHTML = "<p class='error-texto'>Ingresa una cantidad válida de meses (Mínimo 1).</p>";
+                    return;
+                }
+
+                let a = 0, b = 1, totalAhorrado = 0;
+                let tablaHTML = `<table class='tabla-resultados'>
+                                    <tr><th>Mes</th><th>Depósito Mensual</th><th>Total Acumulado</th></tr>`;
+
+                for (let i = 1; i <= meses; i++) {
+                    let depositoActual = a;
+                    totalAhorrado += depositoActual;
+
+                    tablaHTML += `<tr>
+                                    <td>Mes ${i}</td>
+                                    <td>Bs. ${depositoActual}</td>
+                                    <td><strong>Bs. ${totalAhorrado}</strong></td>
+                                  </tr>`;
+
+                    let c = a + b;
+                    a = b;
+                    b = c;
+                }
+                tablaHTML += `</table>`;
+                contenedor.innerHTML = tablaHTML;
+            });
+            document.getElementById("btnVerificarSeguridad").addEventListener("click", () => {
+                const numero = parseInt(document.getElementById("codigoVerificar").value);
+                const contenedor = document.getElementById("resultadoBox");
+
+                if (isNaN(numero) || numero < 1) {
+                    contenedor.innerHTML = "<p class='error-texto'>Por favor, ingresa un código numérico entero positivo.</p>";
+                    return;
+                }
+
+                let contador = 0;
+                for (let i = 1; i <= numero; i++) {
+                    if (numero % i === 0) {
+                        contador++;
+                    }
+                }
+
+                if (contador === 2) {
+                    contenedor.innerHTML = `
+                        <div class='alerta-resultado exito'>
+                            <h3>🔒 Código Seguro</h3>
+                            <p>El número <strong>${numero}</strong> es un número primo. Su descomposición criptográfica es altamente compleja y óptima para autenticación.</p>
+                        </div>`;
+                } else {
+                    contenedor.innerHTML = `
+                        <div class='alerta-resultado peligro'>
+                            <h3>⚠️ Código Vulnerable</h3>
+                            <p>El número <strong>${numero}</strong> NO es primo (tiene ${contador} divisores). No se recomienda su uso aislado en sistemas de encriptación.</p>
+                        </div>`;
+                }
+            });
+
+            document.getElementById("btnCalcularMezcla").addEventListener("click", () => {
+                const cantidad = parseInt(document.getElementById("cantidadMezcla").value);
+                const contenedor = document.getElementById("resultadoBox");
+                if (isNaN(cantidad) || cantidad < 1) {
+                    contenedor.innerHTML = "<p class='error-texto'>Ingresa un número válido de términos (Mínimo 1).</p>";
+                    return;
+                }
+                contenedor.innerHTML = "";
+                let a = 0, b = 1;
+                for (let i = 1; i <= cantidad; i++) {
+                    let terminoActual = a;
+                    let esPrimo = false;
+                    if (terminoActual > 1) {
+                        let div = 0;
+                        for (let x = 1; x <= terminoActual; x++) {
+                            if (terminoActual % x === 0) div++;
+                        }
+                        if (div === 2) esPrimo = true;
+                    }
+                    const cajaNumero = document.createElement("div");
+                    cajaNumero.className = "item-numero";
+                    cajaNumero.textContent = terminoActual;
+
+                    if (esPrimo) {
+                        cajaNumero.classList.add("es-primo");
+                    }
+                    contenedor.appendChild(cajaNumero);
+                    let c = a + b;
+                    a = b;
+                    b = c;
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
